@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Voyage Tours and Travels</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .topbar {
+            background-color: #333;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+        .button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-top: 100px;
+            padding: 20px;
+        }
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h1,
+        .content-box p {
+            color: #fff;
+        }
+        .background-img {
+            background-image: url("{{ url_for('static', filename='images/tour.jpeg') }}");
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+        p{
+            font-size: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+            }
+            .button {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-img"></div>
+    <div class="topbar">
+        <a href="#" class="logo"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Bon Voyage Logo"></a>
+        <div class="buttons">
+            <a href="/login" class="button">Login</a>
+            <a href="/register" class="button">Register</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-box">
+            <h1>Welcome to Bon Voyage Tours and Travels</h1>
+            <p>Your ultimate destination for memorable journeys. Explore the world with us!</p>
+            <p>At Bon Voyage Tours and Travels, we offer a wide range of travel packages tailored to your needs. Whether you're seeking adventure, relaxation, or cultural experiences, we have the perfect destination for you.</p>
+            <p>Join us today and embark on your next unforgettable adventure!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page - Bon Voyage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .flights {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .flight {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            flex: 0 1 calc(33.33% - 20px); /* Adjust width for three columns with gap */
+        }
+
+        .flight h2 {
+            margin-top: 0;
+        }
+
+        .flight p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        .footer {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Bon Voyage Logo">
+        </div>
+        <div>
+            <a href="{{ url_for('home') }}" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Bon Voyage</h1>
+        <p>Explore our flights to different destinations and book your next adventure with us!</p>
+        
+        <div class="flights">
+            <div class="flight">
+                <h2>New York</h2>
+                <p>Explore the Big Apple with our affordable flights to New York. Book now and experience the excitement of Times Square, Central Park, and more!</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="flight">
+                <h2>Paris</h2>
+                <p>Discover the romance of Paris with our exclusive flight deals. Explore iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="flight">
+                <h2>Mumbai</h2>
+                <p>Experience the bustling city of Mumbai with our convenient flight options. Explore Bollywood, historical landmarks, and delicious street food!</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="flight">
+                <h2>Delhi</h2>
+                <p>Discover the vibrant culture and rich history of Delhi. Visit iconic landmarks such as the Red Fort, Qutub Minar, and India Gate.</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Contact Us: support@bonvoyage.com</p>
+    </div>
+</body>
+</html>
